@@ -1,6 +1,6 @@
 # StarWtest
 
-##Projeto criado como desafio da B2W BIT
+## Projeto criado como desafio da B2W BIT
 ### Tecnologias Utilizadas
 
 -   **Vue CLi**: 3.0 ou superior
