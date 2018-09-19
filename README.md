@@ -4,11 +4,10 @@
 ### Tecnologias Utilizadas
 
 -   **Vue CLi**: 3.0 ou superior
--   **Bulma**: para criação dos componentes UI
--   **node-sass/sass-loader**: para trabalhar com arquivos scss
--   **Axios**: leve biblioteca para simplificar requisições Ajax.
+-   **Bulma**: para criação dos componentes UI e variaveis scss
+-   **node-sass/sass-loader**: para trabalhar com novos arquivos scss
+-   **Axios**: leve biblioteca para simplificar requisições Ajax
 -   **Vue-Test-Utils**: é a biblioteca oficial de testes unitários para o Vue.js
--   **Vue-svg-loader**: para auxiliar na manipulação com imagens SVG
 
 
 ## Instalar depedendencias

@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+    <Opening />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Opening from './components/Opening.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Opening
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="scss">
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+* { padding: 0; margin: 0; }
+
+body, html, #App
+{
+	width: 100%;
+	height: 100%;
+	font-family: "Droid Sans", arial, verdana, sans-serif;
+	font-weight: 700;
+	color: #ff6;
+	overflow: hidden;
 }
+
 </style>
