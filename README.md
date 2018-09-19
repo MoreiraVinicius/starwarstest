@@ -7,9 +7,7 @@
 -   **Bulma**: para criação dos componentes UI
 -   **node-sass/sass-loader**: para trabalhar com arquivos scss
 -   **Axios**: leve biblioteca para simplificar requisições Ajax.
--   **Ava**: leve e simples Test Runner 
--   **Avoriaz**: biblioteca utilitária para usar componentes Vue em testes automatizados.
--   **Browser-env**: para criação de um browser de auxilio aos testes.
+-   **Vue-Test-Utils**: é a biblioteca oficial de testes unitários para o Vue.js
 -   **Vue-svg-loader**: para auxiliar na manipulação com imagens SVG
 
 
