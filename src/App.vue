@@ -1,20 +1,13 @@
 <template>
   <div id="app">
-    <div id='stars'></div>
-<div id='stars2'></div>
-<div id='stars3'></div>
-    <Opening />
+    <router-view></router-view>
+    <!-- div :id="'stars'+index" v-for="index in 3" :key="index"></div -->
   </div>
 </template>
 
 <script>
-import Opening from './components/Opening.vue'
-
 export default {
-  name: 'app',
-  components: {
-    Opening
-  }
+  name: 'app'
 }
 </script>
 
@@ -24,7 +17,8 @@ export default {
 
 body, html, #App
 {
-	width: 100%;
+  width: 100%;
+  background-color: black;
 	height: 100%;
 	font-family: "Droid Sans", arial, verdana, sans-serif;
 	font-weight: 700;

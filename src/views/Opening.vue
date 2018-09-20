@@ -1,9 +1,9 @@
 <template>
 <div id="letreiro">
-    <p id="start">A short time ago in a browser very, very close&hellip;</p>
+    <p id="start">A pouco tempo, em um navegador muito perto daqui&hellip;</p>
     <div id="titles">
         <div id="titlecontent">
-            <p class="center">EPISODE IV<br />A NEW HOPE FOR CSS3</p>
+            <p class="center">EPISODE I<br />A NEW HOPE FOR CSS3</p>
             <p>It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. It is a period of vendor war. </p>
         </div>
     </div>
@@ -17,9 +17,6 @@
 </script>
 
 <style scoped>
-
-* { padding: 0; margin: 0; }
-
 p#start
 {
 	position: relative;
