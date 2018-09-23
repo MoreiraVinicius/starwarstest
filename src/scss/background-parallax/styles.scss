@@ -2,3 +2,55 @@
 @import '~scss/background-parallax/keyframes';
 @import '~scss/background-parallax/variables';
 @import '~scss/background-parallax/mixins';
+
+#stars1 {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: $shadows-small;
+  animation: animStar 150s linear infinite;
+  &:after{
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 1px;
+    height: 1px;
+    background: transparent;
+    box-shadow: $shadows-small;
+  }
+}
+    
+#stars2{
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: $shadows-medium;
+  animation: animStar 225s linear infinite;
+    
+  &:after{
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 2px;
+    height: 2px;
+    background: transparent;
+    box-shadow: $shadows-medium;
+  }
+}   
+#stars3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: $shadows-big;
+  animation: animStar 300s linear infinite;
+    
+  &:after {
+    content: " ";
+    position: absolute;
+    top: 2000px;
+    width: 3px;
+    height: 3px;
+    background: transparent;
+    box-shadow: $shadows-big;
+  }
+}
