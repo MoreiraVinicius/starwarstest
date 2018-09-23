@@ -1,5 +1,6 @@
 const path = require('path')
 module.exports = {
+<<<<<<< HEAD
     baseUrl: "/",
     /*css: {
         loaderOptions: {
@@ -16,3 +17,8 @@ module.exports = {
         }
     }
 }
+=======
+    baseUrl: "/"
+};
+
+>>>>>>> 0cefdc1afd7c8cee0172cc8428e3c34f8d948413
