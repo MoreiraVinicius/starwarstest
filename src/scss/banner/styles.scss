@@ -1,0 +1,52 @@
+@import "~scss/banner/keyframes";
+
+  
+.banner {
+  perspective: 800px;
+  transform-style: preserve3d;
+  height: 17em;
+  left: 50%;
+  position: absolute;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  width: 34em;
+
+  &__star {
+    animation: star-banner 8s ease-out;
+    animation-fill-mode: forwards;
+    position: absolute;
+    top: -0.75em;
+  }
+
+  &__wars {
+    animation: wars-banner 8s ease-out;
+    animation-fill-mode: forwards;
+    position: absolute;
+    bottom: -0.5em;
+  }
+
+  &__line {
+    animation: move-byline 9s linear;
+    animation-fill-mode: forwards;
+    position: absolute;
+    color: #fff;
+    font-family: "Droid Sans", arial, verdana, sans-serif;
+    font-size: 2.25em;
+    left: -2em;
+    letter-spacing: 0.4em;
+    right: -2em;
+    text-align: center;
+    text-transform: uppercase;
+    top: 41%;
+
+    & span {
+      display: inline-block;
+      animation: spin-letters 9s linear;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+  
+img {
+  width: 100%;
+}

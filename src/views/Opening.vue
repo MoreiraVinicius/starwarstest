@@ -151,11 +151,11 @@ p#start
 	position: absolute;
     width: 100%;
 	top: 100%;
-	-webkit-animation: scroll 100s linear 2s infinite;
-	-moz-animation: scroll 100s linear 2s infinite;
-	-ms-animation: scroll 100s linear 2s infinite;
-	-o-animation: scroll 100s linear 2s infinite;
-	animation: scroll 100s linear 2s infinite;
+	-webkit-animation: scroll 100s linear 2.5s infinite;
+	-moz-animation: scroll 100s linear 2.5s infinite;
+	-ms-animation: scroll 100s linear 2.5s infinite;
+	-o-animation: scroll 100s linear 2.5s infinite;
+	animation: scroll 100s linear 2.5s infinite;
 }
 
 /* animation */

@@ -1,7 +1,18 @@
+const path = require('path')
 module.exports = {
-    baseUrl: "/"
-<<<<<<< HEAD
-  };
-=======
-};
->>>>>>> 2bc02d1be39cf006be37da7bef15477023adfcb3
+    baseUrl: "/",
+    /*css: {
+        loaderOptions: {
+          sass: {
+            data: `@import "@/scss/banner/_variables.scss";`
+          }
+        }
+    },*/
+    configureWebpack: {
+        resolve: {
+            alias: {
+                scss: path.resolve(__dirname, './src/scss')
+            }
+        }
+    }
+}
