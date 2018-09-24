@@ -10,8 +10,8 @@
 
         <nav :class="{show: isActive}">
         <ul>
-            <li :class="label.cor" v-for="(label, index) in labels" :key="index">
-              <a href="#">{{label.title | capitalize}}</a>
+            <li :class="label.color" v-for="(label, index) in labels" :key="index">
+              <a href="#" @click="selectCategory(label.title, label.color)">{{label.title | capitalize}}</a>
             </li>
         </ul>
         </nav>
@@ -24,18 +24,18 @@ export default {
     return {
       isActive: false,
       labels: [
-        { title: "planets", cor: "yellow" },
-        { title: "starships", cor: "purple" },
-        { title: "vehicles", cor: "red" },
-        { title: "people", cor: "green" },
-        { title: "films", cor: "blue" },
-        { title: "species", cor: "seila" }
+        { title: "planets", color: "gold" },
+        { title: "starships", color: "purple" },
+        { title: "vehicles", color: "red" },
+        { title: "people", color: "green" },
+        { title: "films", color: "blue" },
+        { title: "species", color: "orange" }
       ]
     };
   },
   methods: {
-    selectCategory: function (category) {
-      this.$emit('selected-category', category)
+    selectCategory: function(category, colorWindow) {
+      this.$emit("selected-category", { category, colorWindow });
     }
   },
   filters: {

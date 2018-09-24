@@ -4,12 +4,12 @@
         <div class="columns is-gapless is-centered is-vcentered main">
             <div class="column is-4">
                 <article class="message">
-                    <div class="message-header has-background-danger is-size-4">
+                    <div class="message-header is-size-4" :style="{backgroundColor: colorWindow}" >
                         <p class="hcenter">{{name}}</p>
                     </div>
                     <div class="message-body">
-                        <p v-for="(parameter, index) in parametersCategory.datasets" :key="index">{{Object.keys(parametersCategory.datasets)[index]}}: {{parameter}}</p>
-                        <div vif="category != 'films'" class="has-text-centered"><span>Featured in 1 film.</span></div>
+                        <p v-for="(parameter, index) in parametersCategory.datasets" :key="index"><span class="has-text-weight-bold">{{index}}</span>: {{parameter}}</p>
+                        <div vif="category != 'films'" class="has-text-centered"><span>Featured in {{countFilms}}</span></div>
                     </div>
                 </article>
                 <div class="buttons is-centered">
@@ -30,32 +30,37 @@ export default {
       category: "planets",
       parametersCategory: {},
       labelsParameters: [],
-      name: null
+      name: null,
+      countFilms: [],
+      colorWindow: "gold"
     };
   },
   methods: {
     getRandomValueByCategory() {
-        new Promise((resolve, reject) => {
-            getResult(this.category, resolve, reject);
-        }).then(res =>{
-            this.parametersCategory = res;
-            this.labelsParameters = Object.keys(res.datasets);
-            this.name = res.title;
+      new Promise((resolve, reject) => {
+        getResult(this.category, resolve, reject);
+      })
+        .then(res => {
+          this.parametersCategory = res;
+          this.labelsParameters = Object.keys(res.datasets);
+          this.name = res.title;
+          this.countFilms =
+            res.countFilms > 1
+              ? res.countFilms + " films"
+              : res.countFilms + " film";
         })
-            
+        .catch(err => {
+          console.log(err);
+        });
     },
-    updateCategory(category){
-        this.category = category;
-        this.getResultByCategory();
+    updateCategory({ category, colorWindow }) {
+      this.category = category;
+      this.colorWindow = colorWindow;
+      this.getRandomValueByCategory();
     }
   },
   beforeMount() {
     this.getRandomValueByCategory();
-  },
-  watch:{
-      parametersCategory: function(val){
-          console.log("Novo parameters: ", val)
-      }
   },
   components: { Burguer }
 };
