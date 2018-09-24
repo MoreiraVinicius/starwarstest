@@ -5,7 +5,7 @@
             <div class="column is-4">
                 <article class="message">
                     <div class="message-header has-background-danger is-size-4">
-                        <p class="hcenter">Dark</p>
+                        <p class="hcenter">{{name}}</p>
                     </div>
                     <div class="message-body">
                         <p v-for="(parameter, index) in parametersCategory.datasets" :key="index">{{Object.keys(parametersCategory.datasets)[index]}}: {{parameter}}</p>
@@ -29,7 +29,8 @@ export default {
     return {
       category: "planets",
       parametersCategory: {},
-      labelsParameters: []
+      labelsParameters: [],
+      name: null
     };
   },
   methods: {
@@ -39,6 +40,7 @@ export default {
         }).then(res =>{
             this.parametersCategory = res;
             this.labelsParameters = Object.keys(res.datasets);
+            this.name = res.title;
         })
             
     },
