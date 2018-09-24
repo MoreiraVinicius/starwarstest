@@ -1,6 +1,7 @@
 import { getAllResults } from "./http";
+import { getParameters } from "@/utils/parametersByCategory";
 
-export const getResult = category => {
+export const getResult = (category, mainResolve, mainReject) => {
   new Promise((resolve, reject) => {
     getAllResults(
       "https://swapi.co/api/" + category + "/?format=json",
@@ -10,11 +11,12 @@ export const getResult = category => {
     );
   })
     .then(response => {
-      let random = response[Math.floor(Math.random()*response.length)];
-      console.log("response da promisse: ", random);
-      return random;
+      let random = response[Math.floor(Math.random() * response.length)];
+      let result = getParameters(category, random);
+      return mainResolve(result);
     })
     .catch(err => {
       console.log("Erro na promisse: ", err);
+      mainReject(err)
     });
 };

@@ -6,7 +6,7 @@ export const getAllResults = (url, results, resolve, reject) => {
     .then(response => {
       const retrivedResults = results.concat(response.data.results);
       if (response.data.next !== null) {
-        getAllResults(response.data.next, retrivedResults);
+        getAllResults(response.data.next, retrivedResults, resolve, reject);
       } else {
         resolve(retrivedResults);
       }

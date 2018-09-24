@@ -11,7 +11,7 @@
         <nav :class="{show: isActive}">
         <ul>
             <li :class="label.cor" v-for="(label, index) in labels" :key="index">
-              <a href="#">{{label.title}}</a>
+              <a href="#">{{label.title | capitalize}}</a>
             </li>
         </ul>
         </nav>
@@ -20,10 +20,29 @@
 
 <script>
 export default {
-  data: function(){
-    return{
+  data: function() {
+    return {
       isActive: false,
-      labels: [{title: "Planets", cor:"yellow"}, {title: "Spaceships", cor: "purple"}, {title: "Vehicles", cor: "red"}, {title: "People", cor: "green"}, {title: "Films", cor: "blue"}, {title: "Species", cor: "seila"}]
+      labels: [
+        { title: "planets", cor: "yellow" },
+        { title: "starships", cor: "purple" },
+        { title: "vehicles", cor: "red" },
+        { title: "people", cor: "green" },
+        { title: "films", cor: "blue" },
+        { title: "species", cor: "seila" }
+      ]
+    };
+  },
+  methods: {
+    selectCategory: function (category) {
+      this.$emit('selected-category', category)
+    }
+  },
+  filters: {
+    capitalize: function(value) {
+      if (!value) return "";
+      value = value.toString();
+      return value.charAt(0).toUpperCase() + value.slice(1);
     }
   }
 };
