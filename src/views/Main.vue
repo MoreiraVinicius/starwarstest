@@ -9,16 +9,29 @@
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
                 </div>
             </article>
+            <div class="buttons is-centered">
+                <span class="button is-success is-large is-outlined" @click="getRandomValue">NEXT</span>
+            </div>
         </div>
     </div>
+    
 </template>
 
 <script>
-    export default {
-        
+import { getResult } from "@/services/";
+export default {
+  methods: {
+    getRandomValue() {
+      getResult("films");
+    },
+    data: function(){
+        return{
+            getResultByCategory: null
+        }
     }
+  }
+};
 </script>
 
 <style lang="scss">
-@import "~scss/burguer/styles";
 </style>

@@ -10,20 +10,8 @@
 
         <nav :class="{show: isActive}">
         <ul>
-            <li>
-            <a href="#">Home</a>
-            </li>
-            <li class="green">
-            <a href="#">Jedi</a>
-            </li>
-            <li class="red">
-            <a href="#">Sith</a>
-            </li>
-            <li class="yellow">
-            <a href="#">Sentinel</a>
-            </li>
-            <li class="purple">
-            <a href="#">Samuel L. Jackson</a>
+            <li :class="label.cor" v-for="(label, index) in labels" :key="index">
+              <a href="#">{{label.title}}</a>
             </li>
         </ul>
         </nav>
@@ -34,7 +22,8 @@
 export default {
   data: function(){
     return{
-      isActive: false
+      isActive: false,
+      labels: [{title: "Planets", cor:"yellow"}, {title: "Spaceships", cor: "purple"}, {title: "Vehicles", cor: "red"}, {title: "People", cor: "green"}, {title: "Films", cor: "blue"}, {title: "Species", cor: "seila"}]
     }
   }
 };
