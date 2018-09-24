@@ -11,17 +11,18 @@
 </template>
 
 <script>
-
 export default {
   name: "app"
 };
 </script>
 
 <style lang="scss">
+@charset "utf-8";
+
 @import "~bulma";
 @import "~scss/background-parallax/styles";
+@import "~bulma-pageloader";
 @import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
-
 
 * {
   padding: 0;
@@ -41,11 +42,15 @@ html,
   overflow: hidden;
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .8s;
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.8s;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-    transition: opacity .8s;
+  transition: opacity 0.8s;
   opacity: 0;
+}
+.pageloader {
+  transition: transform ease-out, -webkit-transform ease-out;
 }
 </style>

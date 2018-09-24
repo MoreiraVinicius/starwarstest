@@ -7,17 +7,18 @@ import Burguer from '@/components/Burguer.vue'
 Vue.use(Router)
 
 const router = new Router({
+    mode: 'history',
     routes: [{
-        path: '/',
-        component: Opening
-    },{
-        path: '/main',
-        component: Main
-    },
-    {
-        path: '/burguer',
-        component: Burguer
-    }
+            path: '/',
+            component: Opening
+        }, {
+            path: '/main',
+            component: Main
+        },
+        {
+            path: '/burguer',
+            component: Burguer
+        }
 
     ]
 })

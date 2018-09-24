@@ -1,15 +1,16 @@
 <template>
     <div  class="main">
         <Burguer @selected-category="updateCategory" />
+        <div class="pageloader has-background-black" :class="{'is-active': loading}"><span class="title is-size-4">LOADING</span></div>
         <div class="columns is-gapless is-centered is-vcentered main">
             <div class="column is-4">
-                <article class="message">
+                <article class="message is-loading">
                     <div class="message-header is-size-4" :style="{backgroundColor: colorWindow}" >
                         <p class="hcenter">{{name}}</p>
                     </div>
                     <div class="message-body">
                         <p v-for="(parameter, index) in parametersCategory.datasets" :key="index"><span class="has-text-weight-bold">{{index}}</span>: {{parameter}}</p>
-                        <div vif="category != 'films'" class="has-text-centered"><span>Featured in {{countFilms}}</span></div>
+                        <div v-if="category != 'films'" class="has-text-centered"><span>Featured in {{countFilms}}</span></div>
                     </div>
                 </article>
                 <div class="buttons is-centered">
@@ -32,11 +33,13 @@ export default {
       labelsParameters: [],
       name: null,
       countFilms: [],
-      colorWindow: "gold"
+      colorWindow: "gold",
+      loading: false
     };
   },
   methods: {
     getRandomValueByCategory() {
+      this.loading = true;
       new Promise((resolve, reject) => {
         getResult(this.category, resolve, reject);
       })
@@ -49,8 +52,11 @@ export default {
               ? res.countFilms + " films"
               : res.countFilms + " film";
         })
-        .catch(err => {
-          console.log(err);
+        .catch(function(error) {
+          console.log(error);
+        })
+        .finally(() => {
+          this.loading = false;
         });
     },
     updateCategory({ category, colorWindow }) {
