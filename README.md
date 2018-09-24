@@ -9,6 +9,7 @@
 - **node-sass/sass-loader**: para trabalhar com novos arquivos scss
 - **Axios**: leve biblioteca para simplificar requisições Ajax
 - **Vue-Test-Utils**: é a biblioteca oficial de testes unitários para o Vue.js
+- **Bulma-pageloader**: utilazado na hora de criar um load fullscreen
 
 ### CSS auxilio no desenvolvimento do tema
 
